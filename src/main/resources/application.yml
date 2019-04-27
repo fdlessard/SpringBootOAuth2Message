@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+security:
+  oauth2:
+    client:
+      clientId: client
+      clientSecret: secret
+
+spring:
+  security:
+    user:
+      name: name
+      password: password
+    oauth2:
+      client:
+        clientId: client
+        clientSecret: secret
+      scope: read,write
+      grantType: client_credentials
+      accessTokenUri: http://localhost:8082/oauth/token
+      userAuthorizationUri: http://localhost:8082/oauth/authorize
+      resource:
+        tokenInfoUri: http://localhost:8082/oauth/token
