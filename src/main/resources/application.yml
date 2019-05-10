@@ -1,11 +1,18 @@
 server:
   port: 8081
 
+logging:
+  level:
+    root: debug
+
 security:
   oauth2:
     client:
       clientId: client
       clientSecret: secret
+      access-token-validity-seconds: 60
+      refresh-token-validity-seconds: 600
+
 
 spring:
   security:
@@ -18,7 +25,7 @@ spring:
         clientSecret: secret
       scope: read,write
       grantType: client_credentials
-      accessTokenUri: http://localhost:8082/oauth/token
-      userAuthorizationUri: http://localhost:8082/oauth/authorize
+      accessTokenUri: http://localhost:8081/oauth/token
+      userAuthorizationUri: http://localhost:8081/oauth/authorize
       resource:
-        tokenInfoUri: http://localhost:8082/oauth/token
+        tokenInfoUri: http://localhost:8081/oauth/token

@@ -17,6 +17,6 @@ public class MessageController {
     public Message getMessage() {
 
         log.info("MessageController.getMessage()");
-        return new Message("Hello world");
+        return new Message("Hello world - from SpringBootOAuth2MessageApplication");
     }
 }
